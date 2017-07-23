@@ -1,0 +1,16 @@
+# IDE的配置文件
+/.idea/
+.idea/codeStyleSettings.xml
+.vscode/settings.json
+
+# 日志
+npm-debug.log
+yarn-error.log
+yarn.lock
+
+# node 依赖包
+node_modules/
+node_modules.zip
+
+# 
+.DS_Store

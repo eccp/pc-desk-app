@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+</head>
+
+<body>
+  <h1>Hello World!</h1>
+  <div>
+    文件名：<input type="text" id="input" value="1.json">
+    <button onclick="createFile()">生成文件</button>
+  </div>
+  <!-- All of the Node.js APIs are available in this renderer process. -->
+  We are using Node.js
+  <script>
+    document.write(process.versions.node)
+  </script>, Chromium
+  <script>
+    document.write(process.versions.chrome)
+  </script>, and Electron
+  <script>
+    document.write(process.versions.electron)
+  </script>.
+</body>
+
+<script>
+    // You can also require other files to run in this process
+    require('./renderer.js');
+    var fs = require('fs');
+    function createFile() {
+      var name = document.getElementById('input').value;
+      console.log(name);
+      fs.writeFileSync('./custom/' + name, '{"string": "hello world,耶"}', 'utf-8');
+    }
+</script>
+
+</html>
